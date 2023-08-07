@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="{{url_for('static',filename='style3.css')}}" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{url_for('static',filename='favicon.png')}}" />
+
+    <title>Pune Home Price Prediction</title>
+</head>
+
+<body>
+    <div class=" img">
+    </div>
+    <div class="container text-center">
+        <h1>Pune Property Price Prediction</h1>
+        <form class="form" action="{{url_for('predictpune')}}" method="POST" autocomplete="off">
+            <h2>Area (Square Feet)</h2>
+            <input required aria-required="true" type="number" class="area" id="uiSqft" class="floatLabel"
+                name="Squareft" placeholder="1000" min="1000" max="50000" />
+
+            <h2>BHK</h2>
+            <div class="switch-field text-center">
+                <div class="allRadio">
+                    <input class="text-center" type="radio" id="radio-bhk-1" name="uiBHK" value="1" />
+                    <label class="text-center" for="radio-bhk-1">1</label>
+                    <input class="text-center" type="radio" id="radio-bhk-2" name="uiBHK" value="2" checked />
+                    <label class="text-center" for="radio-bhk-2">2</label>
+                    <input class="text-center" type="radio" id="radio-bhk-3" name="uiBHK" value="3" />
+                    <label class="text-center" for="radio-bhk-3">3</label>
+                    <input class="text-center" type="radio" id="radio-bhk-4" name="uiBHK" value="4" />
+                    <label class="text-center" for="radio-bhk-4">4</label>
+                    <input class="text-center" type="radio" id="radio-bhk-5" name="uiBHK" value="5" />
+                    <label class="text-center" for="radio-bhk-5">5</label>
+                </div>
+            </div>
+            <h2>Bathrooms</h2>
+            <div class="switch-field text-center">
+                <div class="allRadio">
+                    <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1" />
+                    <label for="radio-bath-1">1</label>
+                    <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked />
+                    <label for="radio-bath-2">2</label>
+                    <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3" />
+                    <label for="radio-bath-3">3</label>
+                    <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4" />
+                    <label for="radio-bath-4">4</label>
+                    <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5" />
+                    <label for="radio-bath-5">5</label>
+                </div>
+            </div>
+
+
+            <h2>Location</h2>
+            <div>
+                <select required aria-required="true" name="sLocation" id="uiLocations" class="location">
+                    <option value="" disabled="disabled" selected="selected">Choose a Location</option>
+                    <option>Alandi Road</option>
+                    <option>Ambegaon Budruk</option>
+                    <option>Anandnagar</option>
+                    <option>Aundh</option>
+                    <option>Aundh Road</option>
+                    <option>Balaji Nagar</option>
+                    <option>Baner</option>
+                    <option>Baner road</option>
+                    <option>Bhandarkar Road</option>
+                    <option>Bhavani Peth</option>
+                    <option>Bibvewadi</option>
+                    <option>Bopodi</option>
+                    <option>Budhwar Peth</option>
+                    <option>Bund Garden Road</option>
+                    <option>Camp</option>
+                    <option>Chandan Nagar'</option>
+                    <option>Dapodi</option>
+                    <option>Deccan Gymkhana</option>
+                    <option>Dehu Road</option>
+                    <option>Dhankawadi</option>
+                    <option>Dhayari Phata'</option>
+                    <option>Dhole Patil Road</option>
+                    <option>Erandwane</option>
+                    <option>Fatima Nagar</option>
+                    <option>Fergusson College Road</option>
+                    <option>Ganesh Peth</option>
+                    <option>Ganeshkhind</option>
+                    <option>Ghorpade Peth</option>
+                    <option>Gokhale Nagar</option>
+                    <option>Gultekdi</option>
+                    <option>Guruwar peth</option>
+                    <option>Hadapsar</option>
+                    <option>Hingne Khurd</option>
+                    <option>Hadapsar Industrial Estate</option>
+                    <option>Jangali Maharaj Road</option>
+                    <option>Kalyani Nagar</option>
+                    <option>Karve Nagar</option>
+                    <option>Karve Road</option>
+                    <option>Kasba Peth</option>
+                    <option>Katraj</option>
+                    <option>Khadaki</option>
+                    <option>Khadki</option>
+                    <option>Kharadi</option>
+                    <option>Kondhwa</option>
+                    <option>Kondhwa Budruk</option>
+                    <option>Kondhwa Khurd</option>
+                    <option>Koregaon Park</option>
+                    <option>Kothrud</option>
+                    <option>Law College Road</option>
+                    <option>Laxmi Road</option>
+                    <option>Lulla Nagar</option>
+                    <option>Mahatma Gandhi Road</option>
+                    <option>Mangalwar peth</option>
+                    <option>Manik Bagh</option>
+                    <option>Market yard</option>
+                    <option>Model colony'</option>
+                    <option>Mukund Nagar</option>
+                    <option>Mundhawa</option>
+                    <option>Nagar Road</option>
+                    <option>Nana Peth</option>
+                    <option>Narayan Peth</option>
+                    <option>Narayangaon</option>
+                    <option>Navi Peth</option>
+                    <option>Padmavati</option>
+                    <option>Parvati Darshan</option>
+                    <option>Pashan</option>
+                    <option>Paud Road</option>
+                    <option>Pirangut</option>
+                    <option>Prabhat Road</option>
+                    <option>Pune Railway Station</option>
+                    <option>Rasta Peth</option>
+                    <option>Raviwar Peth</option>
+                    <option>Sadashiv Peth</option>
+                    <option>Sahakar Nagar</option>
+                    <option>Salunke Vihar</option>
+                    <option>Sasson Road</option>
+                    <option>Satara Road</option>
+                    <option>Senapati Bapat Road</option>
+                    <option>Sinhagad Roa</option>
+                    <option>Somwar Peth</option>
+                    <option>Swargate</option>
+                    <option>Tilak Road</option>
+                    <option>Uruli Devachi</option>
+                    <option>Vadgaon Budruk</option>
+                    <option>Wadgaon Sheri</option>
+                    <option>Viman Nagar</option>
+                    <option>Vishrant Wadi</option>
+                    <option>Wagholi</option>
+                    <option>Wakadewadi</option>
+                    <option>Wanowrie</option>
+                    <option>Warje</option>
+                    <option>Yerawada</option>
+                    <option>Ghorpadi</option>
+                </select>
+            </div>
+
+            <input class="submit" type="submit" value="Estimate Price" />
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ url_for('static', filename='animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='owl.carousel.min.css') }}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{{ url_for('static', filename='style1.css') }}" rel="stylesheet">
+
+
+</head>
+<body>
+    <div class="container-fluid nav-bar bg-transparent">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+            <a href="index2.html" class="navbar-brand d-flex align-items-center text-center">
+                <div class="icon p-2 me-2">
+                    <img class="img-fluid" src="{{ url_for('static', filename='icon-deal.png') }}" alt="Icon" style="width: 30px; height: 30px;">
+                </div>
+                <h1 class="m-0 text-primary">Makaan</h1>
+            </a>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img position-relative overflow-hidden p-5 pe-0">
+                        <img class="img-fluid w-100" src="{{ url_for('static', filename='about.jpg') }}">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="mb-4">#1 Place To Find The Perfect Property</h1>
+                    <p class="mb-4">Welcome to our website, where we specialize in predicting house prices and providing exceptional real estate services.
+                         We understand that finding the perfect place to call your own at a reasonable price is a significant milestone in life.
+                          That's why we are dedicated to assisting you in this journey.</p>
+                    <p><i class="text-primary me-3"></i>Our advanced algorithms and comprehensive data analysis enable us to accurately predict house prices, helping you make informed decisions.
+                         Whether you are a buyer or a seller, our goal is to ensure you find the ideal property and achieve the best possible deal.</p>
+                    <p><i class="text-primary me-3"></i>To further enhance your experience, we have a team of certified property agents who are committed to providing top-notch service.
+                         Their expertise, coupled with our cutting-edge technology, guarantees a seamless and efficient process.
+                          We prioritize your needs and preferences, guiding you every step of the way.</p>
+                    <p><i class="text-primary me-3"></i>Finding your own place shouldn't be a daunting task. 
+                        With our platform, you can explore a wide range of options, compare prices, and discover hidden gems.
+                         We believe that everyone deserves to find their dream home without compromising on affordability.</p>
+                    <p><i class="text-primary me-3"></i>Join us today and let us help you navigate the real estate market with ease. Your perfect place awaits, and we are here to make it a reality.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+</body>
+</html>
